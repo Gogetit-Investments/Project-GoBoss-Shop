@@ -1,0 +1,150 @@
+{
+  "../components/drawer-views/container.tsx -> @/components/cart/cart-drawer-view": {
+    "id": 97771,
+    "files": [
+      "static/chunks/632cba62-8b8968b14fa1b5f9.js",
+      "static/css/847202140afdaf15.css",
+      "static/chunks/7771.0f62738bc25ca587.js"
+    ]
+  },
+  "../components/drawer-views/container.tsx -> @/layouts/_layout-sidebar": {
+    "id": 90413,
+    "files": [
+      "static/chunks/632cba62-8b8968b14fa1b5f9.js",
+      "static/css/847202140afdaf15.css",
+      "static/chunks/413-0a6f871e7b485b1f.js",
+      "static/chunks/4070.1b31160a1baffd8b.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/auth/forgot-password": {
+    "id": 93137,
+    "files": [
+      "static/chunks/5496-ab2f94e47fda3e86.js",
+      "static/chunks/4897.c47220582e5a2bfa.js",
+      "static/chunks/3137.5b877d5fe2b88d83.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/auth/login-form": {
+    "id": 85601,
+    "files": [
+      "static/chunks/5496-ab2f94e47fda3e86.js",
+      "static/chunks/4897.c47220582e5a2bfa.js",
+      "static/chunks/5601.af5622a53f4f0e28.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/auth/register-form": {
+    "id": 673,
+    "files": [
+      "static/chunks/5496-ab2f94e47fda3e86.js",
+      "static/chunks/4897.c47220582e5a2bfa.js",
+      "static/chunks/673.75b54747ee4890cb.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/card/add-new-card-modal": {
+    "id": 47187,
+    "files": [
+      "static/chunks/846.fd247fbc3316f61a.js",
+      "static/chunks/8646.fc129f3d9358a9c2.js",
+      "static/chunks/7187.a53fff1d3ebdd88a.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/card/delete-view": {
+    "id": 36047,
+    "files": [
+      "static/chunks/6047.40cb72359c9b41f1.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/payment/add-new-payment-modal": {
+    "id": 81109,
+    "files": [
+      "static/chunks/846.fd247fbc3316f61a.js",
+      "static/chunks/8646.fc129f3d9358a9c2.js",
+      "static/chunks/8515.d6c2f4c019565c49.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/payment/payment-modal": {
+    "id": 74475,
+    "files": [
+      "static/chunks/9914-e3e624fe2df75820.js",
+      "static/chunks/846.fd247fbc3316f61a.js",
+      "static/chunks/6489-06716d32164c0639.js",
+      "static/chunks/8646.fc129f3d9358a9c2.js",
+      "static/css/7ca4dcc8864f3b2d.css",
+      "static/chunks/7803.40bc878b6fd0e320.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/product/product-popup": {
+    "id": 44400,
+    "files": [
+      "static/chunks/8666-d1b28ec0943e3413.js",
+      "static/chunks/2964-0d5664640d01b29b.js",
+      "static/chunks/3328-e40713bdeada1df9.js",
+      "static/css/7d5d06c84fff522a.css",
+      "static/chunks/5637.10cb2e45f90e9ed5.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/questions/question-form": {
+    "id": 22942,
+    "files": [
+      "static/chunks/5496-ab2f94e47fda3e86.js",
+      "static/chunks/2942.55b17cc03428f9c2.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/review/abuse-report-form": {
+    "id": 44790,
+    "files": [
+      "static/chunks/5496-ab2f94e47fda3e86.js",
+      "static/chunks/4790.8ddb8fd915d609a1.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/review/review-form": {
+    "id": 17416,
+    "files": [
+      "static/chunks/5496-ab2f94e47fda3e86.js",
+      "static/chunks/2512-e45cd1ad6407f6d7.js",
+      "static/css/241857cfe16b9730.css",
+      "static/chunks/7416.c21805e5a5e2b8a0.js"
+    ]
+  },
+  "../components/modal-views/container.tsx -> @/components/review/review-image-modal": {
+    "id": 62627,
+    "files": [
+      "static/chunks/8666-d1b28ec0943e3413.js",
+      "static/css/7d5d06c84fff522a.css",
+      "static/chunks/4355.6bb2e8a0c0e23b30.js"
+    ]
+  },
+  "../components/payment/payment-modal.tsx -> @/components/payment/razorpay/razorpay-payment-modal": {
+    "id": 10287,
+    "files": [
+      "static/chunks/287.32e6977572b32ddd.js"
+    ]
+  },
+  "../layouts/_dashboard.tsx -> @/layouts/_bottom-navigation": {
+    "id": 73378,
+    "files": [
+      "static/chunks/3378.37bcc1d23cb76029.js"
+    ]
+  },
+  "../layouts/_general-layout.tsx -> @/layouts/_bottom-navigation": {
+    "id": 73378,
+    "files": [
+      "static/chunks/3378.37bcc1d23cb76029.js"
+    ]
+  },
+  "../layouts/_layout.tsx -> @/layouts/_bottom-navigation": {
+    "id": 73378,
+    "files": [
+      "static/chunks/5464.1b7141f3f5f7822b.js"
+    ]
+  },
+  "_app.tsx -> @/layouts/_private-route": {
+    "id": 60661,
+    "files": [
+      "static/chunks/5496-ab2f94e47fda3e86.js",
+      "static/chunks/4897.c47220582e5a2bfa.js",
+      "static/css/e150e883199783c2.css",
+      "static/chunks/661.f69f50d08024fdc1.js"
+    ]
+  }
+}
