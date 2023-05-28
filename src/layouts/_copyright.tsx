@@ -8,12 +8,12 @@ export default function Copyright({ className }: { className?: string }) {
     <div className={cn('tracking-[0.2px]', className)}>
       &copy; {t('text-copy-right')} {currentYear}. {' '}
       <a
-        href="https://redq.io"
+        href="https://goboss.com.ng"
         target="_blank"
         rel="noopener noreferrer"
         className="hover:text-brand-dark"
       >
-        RedQ, Inc
+        GoBoss e-Commerce Platform. Key partner for CBN eNaira
       </a>
       .
     </div>

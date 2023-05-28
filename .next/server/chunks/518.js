@@ -65,12 +65,12 @@ _data_settings__WEBPACK_IMPORTED_MODULE_8__ = (__webpack_async_dependencies__.th
 
 
 function Logo({ className ='w-20' , ...props }) {
-    var ref, ref1;
+    var ref;
     const isMounted = (0,_lib_hooks_use_is_mounted__WEBPACK_IMPORTED_MODULE_5__/* .useIsMounted */ .t)();
     const { isDarkMode  } = (0,_lib_hooks_use_is_dark_mode__WEBPACK_IMPORTED_MODULE_6__/* .useIsDarkMode */ .G)();
     const { lightLogo , darkLogo  } = _data_static_site_settings__WEBPACK_IMPORTED_MODULE_7__/* .siteSettings */ .U;
     const { settings  } = (0,_data_settings__WEBPACK_IMPORTED_MODULE_8__/* .useSettings */ .r)();
-    var ref2, ref3, ref4, ref5;
+    var ref1, ref2, ref3;
     return(/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_ui_links_anchor_link__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
         href: _config_routes__WEBPACK_IMPORTED_MODULE_4__/* ["default"].home */ .Z.home,
         className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('relative flex items-center text-dark focus:outline-none dark:text-light', className),
@@ -83,18 +83,26 @@ function Logo({ className ='w-20' , ...props }) {
             },
             children: [
                 isMounted && isDarkMode && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_ui_image__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
-                    src: (ref2 = settings === null || settings === void 0 ? void 0 : (ref = settings.dark_logo) === null || ref === void 0 ? void 0 : ref.original) !== null && ref2 !== void 0 ? ref2 : darkLogo,
+                    src: (ref1 = settings === null || settings === void 0 ? void 0 : (ref = settings.dark_logo) === null || ref === void 0 ? void 0 : ref.original) !== null && ref1 !== void 0 ? ref1 : darkLogo,
                     layout: "fill",
                     objectFit: "contain",
                     loading: "eager",
-                    alt: (ref3 = settings === null || settings === void 0 ? void 0 : settings.siteTitle) !== null && ref3 !== void 0 ? ref3 : 'Dark Logo'
+                    alt: (ref2 = settings === null || settings === void 0 ? void 0 : settings.siteTitle) !== null && ref2 !== void 0 ? ref2 : 'GoBoss Logo Dark'
                 }),
-                isMounted && !isDarkMode && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_ui_image__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
-                    src: (ref4 = settings === null || settings === void 0 ? void 0 : (ref1 = settings.logo) === null || ref1 === void 0 ? void 0 : ref1.original) !== null && ref4 !== void 0 ? ref4 : lightLogo,
+                isMounted && !isDarkMode && // <Image
+                //   src={settings?.logo?.original ?? lightLogo}
+                //   layout="fill"
+                //   objectFit="contain"
+                //   loading="eager"
+                //   alt={settings?.siteTitle ?? 'GoBoss Logo Ligt'}
+                // />
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_ui_image__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
+                    src: '/image/logo.jpeg',
+                    // src={logo?.original ?? siteSettings.logo.url}
+                    alt: (ref3 = settings === null || settings === void 0 ? void 0 : settings.siteTitle) !== null && ref3 !== void 0 ? ref3 : 'GoBoss Logo Ligt',
                     layout: "fill",
                     objectFit: "contain",
-                    loading: "eager",
-                    alt: (ref5 = settings === null || settings === void 0 ? void 0 : settings.siteTitle) !== null && ref5 !== void 0 ? ref5 : 'Light Logo'
+                    loading: "eager"
                 })
             ]
         })

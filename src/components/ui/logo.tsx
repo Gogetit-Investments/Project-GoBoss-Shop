@@ -37,17 +37,25 @@ export default function Logo({
             layout="fill"
             objectFit="contain"
             loading="eager"
-            alt={settings?.siteTitle ?? 'Dark Logo'}
+            alt={settings?.siteTitle ?? 'GoBoss Logo Dark'}
           />
         )}
         {isMounted && !isDarkMode && (
+          // <Image
+          //   src={settings?.logo?.original ?? lightLogo}
+          //   layout="fill"
+          //   objectFit="contain"
+          //   loading="eager"
+          //   alt={settings?.siteTitle ?? 'GoBoss Logo Ligt'}
+          // />
           <Image
-            src={settings?.logo?.original ?? lightLogo}
-            layout="fill"
-            objectFit="contain"
-            loading="eager"
-            alt={settings?.siteTitle ?? 'Light Logo'}
-          />
+          src = {'/image/logo.jpeg'}
+          // src={logo?.original ?? siteSettings.logo.url}
+          alt={settings?.siteTitle ?? 'GoBoss Logo Ligt'}
+          layout="fill"
+          objectFit="contain"
+          loading="eager"
+        />
         )}
       </span>
     </AnchorLink>

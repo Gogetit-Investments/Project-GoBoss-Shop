@@ -12,8 +12,8 @@
     "files": [
       "static/chunks/632cba62-8b8968b14fa1b5f9.js",
       "static/css/847202140afdaf15.css",
-      "static/chunks/413-0a6f871e7b485b1f.js",
-      "static/chunks/4070.1b31160a1baffd8b.js"
+      "static/chunks/413-573d5978ab41bda9.js",
+      "static/chunks/4070.7af66770dd831d3f.js"
     ]
   },
   "../components/modal-views/container.tsx -> @/components/auth/forgot-password": {

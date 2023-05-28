@@ -31,11 +31,11 @@ function Copyright({ className  }) {
             ". ",
             ' ',
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                href: "https://redq.io",
+                href: "https://goboss.com.ng",
                 target: "_blank",
                 rel: "noopener noreferrer",
                 className: "hover:text-brand-dark",
-                children: "RedQ, Inc"
+                children: "GoBoss e-Commerce Platform. Key partner for CBN eNaira"
             }),
             "."
         ]
