@@ -17,6 +17,7 @@ import ProductPopupLoader from '@/components/product/product-popup-loader';
 import isEmpty from 'lodash/isEmpty';
 import FavoriteButton from '@/components/favorite/favorite-button';
 import { useTranslation } from 'next-i18next';
+import { StarIcon } from '../icons/star-icon';
 
 function getPreviews(gallery: any[], image: any) {
   if (!isEmpty(gallery) && Array.isArray(gallery)) return gallery;
@@ -70,7 +71,7 @@ export default function ProductPopupDetails() {
               alt={shop.name}
               layout="fill"
               quality={100}
-              objectFit="cover"
+              objectFit="contain"
               src={shop.logo.thumbnail ?? placeholder}
               className="rounded-full"
             />
@@ -107,12 +108,13 @@ export default function ProductPopupDetails() {
                 </div>
               )}
               <div className="flex items-center tracking-[.1px] text-dark dark:text-light">
-                <DownloadIcon className="h-[18px] w-[18px] text-dark-900 ltr:mr-2.5 rtl:ml-2.5 dark:text-light-800" />
-                {pluralize(t('text-download'), total_downloads, true)}
+                {/* <DownloadIcon className="h-[18px] w-[18px] text-dark-900 ltr:mr-2.5 rtl:ml-2.5 dark:text-light-800" /> */}
+              <StarIcon className="h-[18px] w-[18px] text-dark-900 ltr:mr-2.5 rtl:ml-2.5 dark:text-light-800"/>
+                {total_downloads ?? "0 in stock"} 
               </div>
             </div>
             <ProductInformation
-              tags={tags}
+              
               created_at={created_at}
               updated_at={updated_at}
               layoutType={type.name}
@@ -125,7 +127,7 @@ export default function ProductPopupDetails() {
             </div>
           </div>
           <div className="flex flex-col-reverse items-center xs:flex-row xs:gap-2.5 xs:pb-4 md:flex-nowrap md:gap-3.5 lg:gap-4 3xl:pb-14">
-            {!isFreeItem ? (
+            {/* {!isFreeItem ? (
               <AddToCart
                 item={product}
                 toastClassName="-mt-10 xs:mt-0"
@@ -138,8 +140,8 @@ export default function ProductPopupDetails() {
                 productName={name}
                 className="mt-2.5 w-full flex-1 xs:mt-0"
               />
-            )}
-            {Boolean(preview_url) && (
+            )} */}
+            {/* {Boolean(preview_url) && (
               <a
                 href={preview_url}
                 rel="noreferrer"
@@ -148,7 +150,7 @@ export default function ProductPopupDetails() {
               >
                 {t('text-live-preview')}
               </a>
-            )}
+            )} */}
           </div>
         </div>
       </div>

@@ -36,7 +36,7 @@ export default function Card({ product }: { product: Product }) {
           alt={name}
           layout="fill"
           quality={100}
-          objectFit="cover"
+          objectFit="contain"
           src={image?.thumbnail ?? placeholder}
           className="bg-light-500 dark:bg-dark-400"
         />
@@ -84,7 +84,7 @@ export default function Card({ product }: { product: Product }) {
         </div>
       </div>
       <div className="flex items-start justify-between pt-3.5">
-        <div className="relative flex h-8 w-8 flex-shrink-0 4xl:h-9 4xl:w-9">
+        {/* <div className="relative flex h-8 w-8 flex-shrink-0 4xl:h-9 4xl:w-9">
           <Image
             alt={shop?.name}
             layout="fill"
@@ -93,7 +93,7 @@ export default function Card({ product }: { product: Product }) {
             src={shop?.logo?.thumbnail ?? placeholder}
             className="rounded-full bg-light-500 dark:bg-dark-400"
           />
-        </div>
+        </div> */}
         <div className="-mt-[1px] flex flex-col truncate ltr:mr-auto ltr:pl-2.5 rtl:ml-auto rtl:pr-2.5 rtl:text-right">
           <h3
             title={name}

@@ -94,7 +94,7 @@ const AboutPage: NextPageWithLayout = () => {
     <>
       <Seo
         title="About us"
-        description="Fastest digital download template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
+        description="Nigeria's number 1 eNaira transaction portal"
         url={routes.about}
       />
       <div className="mx-auto flex h-full w-full max-w-screen-xl flex-col p-4 sm:p-5">
