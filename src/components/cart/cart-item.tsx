@@ -53,7 +53,7 @@ export default function CartItem({
             {itemPrice}
           </span>
           <span className="text-light-base dark:text-dark-base">
-            X {quantity}
+            x {quantity}
           </span>
         </p>
       </div>

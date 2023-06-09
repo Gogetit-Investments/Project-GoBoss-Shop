@@ -18,6 +18,7 @@ import {
   useWalletPointsAtom,
   verifiedTokenAtom,
   checkoutAtom,
+  customerContactAtom,
 } from '@/components/cart/lib/checkout';
 import StripePayment from '@/components/cart/payment/stripe';
 import PaymentGrid from '@/components/cart/payment/payment-grid';
@@ -25,6 +26,7 @@ import routes from '@/config/routes';
 import { useTranslation } from 'next-i18next';
 import { PaymentGateway } from '@/types';
 import { useSettings } from '@/data/settings';
+import { getMaxListeners } from 'process';
 
 export default function CartCheckout() {
   const { settings } = useSettings();
@@ -43,7 +45,7 @@ export default function CartCheckout() {
       const { tracking_number, payment_gateway, payment_intent } = res;
       if (tracking_number) {
         if (
-          [PaymentGateway.FULL_WALLET_PAYMENT].includes(
+          [PaymentGateway.PAYSTACK].includes(
             payment_gateway as PaymentGateway
           )
         ) {
@@ -71,6 +73,7 @@ export default function CartCheckout() {
   const [payableAmount] = useAtom(payableAmountAtom);
   const [token] = useAtom(verifiedTokenAtom);
   const { items, verifiedResponse } = useCart();
+  const [customer_details] = useAtom(customerContactAtom);
 
   const available_items = items.filter(
     (item) =>
@@ -109,8 +112,11 @@ export default function CartCheckout() {
     }
   );
 
+  // const email = customer_details?.email;
   // phone number field
   const { phoneNumber } = usePhoneInput();
+  const  email  = "vctroseji@gmail.com";
+  const currency  = "NGN";
   function createOrder() {
     // if (
     //   (use_wallet && Boolean(payableAmount) && !token) ||
@@ -147,12 +153,14 @@ export default function CartCheckout() {
         subtotal: item.price * item.quantity,
       })),
       payment_gateway: use_wallet_points
-        ? PaymentGateway.FULL_WALLET_PAYMENT
+        ? PaymentGateway.PAYSTACK
         : payment_gateway,
       use_wallet_points,
       ...(token && { token }),
       sales_tax: verifiedResponse?.total_tax ?? 0,
       customer_contact: phoneNumber ? phoneNumber : '1',
+      email: email ? email : "vctroseji@gmail.com",
+      currency: currency,
     });
   }
 
@@ -173,13 +181,13 @@ export default function CartCheckout() {
         </div>
       </div>
 
-      {verifiedResponse && (
+      {/* {verifiedResponse && (
         <CartWallet
           totalPrice={totalPrice}
           walletAmount={verifiedResponse.wallet_amount}
           walletCurrency={verifiedResponse.wallet_currency}
         />
-      )}
+      )} */}
 
       {/* {use_wallet_points && !Boolean(payableAmount) ? null : <StripePayment />} */}
 

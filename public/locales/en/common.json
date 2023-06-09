@@ -145,7 +145,7 @@
   "text-help-six-desc": "Please read the documentation carefully . We also have some online video tutorials regarding this issue . If the problem remains, Please Open a ticket in the support forum.",
 
   "text-license-one-title": "Personal Information",
-  "text-license-one-desc": "<p>\"Pixer\" is a trademark of Pixer Private Limited (\"Company\"), a company incorporated under the Companies Act, 2013 with its registered and corporate office at Plot 64H, Sector 18, Gudgeon 122001 in the course of its business. The domain name grocers.com is owned by the Company.</p><p>If you are a California resident, the information below also applies to you. Certain terms used in this section have the meanings given to them in the California Consumer Privacy Act of 2018 (\"CCPA\").</p>",
+  "text-license-one-desc": "<p>\"GoBoss\" is a trademark of GoBoss - Multivendor Digital  Marketplace (\"Company\"), a company incorporated under the Companies Act, 2013 with its registered and corporate office at Plot 64H, Sector 18, Gudgeon 122001 in the course of its business. The domain name grocers.com is owned by the Company.</p><p>If you are a California resident, the information below also applies to you. Certain terms used in this section have the meanings given to them in the California Consumer Privacy Act of 2018 (\"CCPA\").</p>",
 
   "text-license-two-title": "Snap",
   "text-license-two-desc": "<p>Customer are advised to read and understand our Privacy Policy carefully, as by accessing the website/app you agree to be bound by the terms and conditions of the Privacy Policy and consent to the collection, storage and use of information relating to you as provided herein.</p><p>If you do not agree with the terms and conditions of our Privacy Policy, including in relation to the manner of collection or use of your information, please do not use or access the website/app.</p><p>Our Privacy Policy is incorporated into the Terms and Conditions of Use of the website/app, and is subject to change from time to time without notice. It is strongly recommended that you periodically review our Privacy Policy as posted on the App/Web.</p>",
@@ -225,12 +225,12 @@
   "text-terms-nine-title": "Contact us",
   "text-terms-nine-desc": "<p>We are always happy to chat. A good way to reach us here. <a href=\"/contact-us\" class=\"underline hover:text-brand-dark hover:no-underline\">Contact us</a></p>",
 
-  "text-welcome-back": "Welcome Back, Get Login",
+  "text-welcome-back": "Welcome Back, Please Login",
   "text-create-an-account": "Create your account. Already have account?",
   "text-login": "Login here",
   "text-register": "Register",
   "text-wrong-user-name-and-pass": "Wrong username or password",
-  "text-join-now": "Join your account. Don’t have account?",
+  "text-join-now": "Login to your account. Don’t have an account?",
   "text-create-account": "Create Account",
   "text-forgot-password": "Forgot Password?",
   "text-get-login": "Get Login",
@@ -318,7 +318,7 @@
   "text-select-payment-gateway": "Please select a payment gateway.",
   "text-order-number": "Order Number",
   "text-note": "Note",
-  "message-sub-order": "This order has products from multiple vendors. So we divided this order into multiple vendor orders.",
+  "message-sub-order": "If this order has products from multiple vendors, we will divide the order into multiple vendor orders. This means tat your products may arrive in seperate dispatches",
   "text-tracking-number": "Tracking Number",
   "text-status": "Status",
   "text-total-price": "Total Price",

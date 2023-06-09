@@ -151,12 +151,12 @@ const ProductPage: NextPageWithLayout<
                 <div className="pb-5 leading-[1.9em] dark:text-light-600">
                   {description}
                 </div>
-                <ProductSocialShare
+                {/* <ProductSocialShare
                   productSlug={slug}
                   className="border-t border-light-500 pt-5 dark:border-dark-400 md:pt-7"
-                />
+                /> */}
               </div>
-              <ProductInformation
+              {/* <ProductInformation
                 tags={tags}
                 created_at={created_at}
                 updated_at={updated_at}
@@ -164,7 +164,7 @@ const ProductPage: NextPageWithLayout<
                 //@ts-ignore
                 icon={type?.icon}
                 className="flex-shrink-0 pb-6 pt-2.5 lg:min-w-[350px] lg:max-w-[470px] lg:pb-0"
-              />
+              /> */}
             </div>
             <div className="mt-4 w-full md:mt-8 md:space-y-10 lg:mt-12 lg:flex lg:flex-col lg:space-y-12">
               <AverageRatings
@@ -173,17 +173,17 @@ const ProductPage: NextPageWithLayout<
                 ratings={ratings}
               />
               <ProductReviews productId={id} />
-              <ProductQuestions
+              {/* <ProductQuestions
                 productId={product?.id}
                 shopId={product?.shop?.id}
-              />
+              /> */}
             </div>
           </div>
 
-          <ProductSocialShare
+          {/* <ProductSocialShare
             productSlug={slug}
             className="border-t border-light-500 pt-5 dark:border-dark-400 md:pt-7 lg:hidden"
-          />
+          /> */}
         </motion.div>
       </div>
       <motion.div

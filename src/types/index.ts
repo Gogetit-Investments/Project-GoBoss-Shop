@@ -308,6 +308,8 @@ interface ConnectProductOrderPivot {
 }
 
 export interface CreateOrderInput {
+  currency: string,
+  email: string,
   amount: number;
   total: number;
   paid_total: number;
@@ -327,6 +329,7 @@ export enum PaymentGateway {
   PAYPAL = 'PAYPAL',
   RAZORPAY = 'RAZORPAY',
   MOLLIE = 'MOLLIE',
+  PAYSTACK = 'PAYSTACK',
 }
 
 export enum OrderStatus {
@@ -364,6 +367,11 @@ export interface PaymentIntentInfo {
   redirect_url?: string;
   amount?: string;
   currency: string;
+}
+
+
+export interface TransactionRef {
+  payment_id?: string;
 }
 
 export interface CheckoutVerificationInput {

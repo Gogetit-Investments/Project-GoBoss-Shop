@@ -98,6 +98,14 @@ const PaymentGrid: React.FC<{ className?: string; theme?: 'bw' }> = ({
       width: 82,
       height: 21,
     },
+    PAYSTACK: {
+      name: 'Paystack',
+      value: PaymentGateway.PAYSTACK,
+      icon: '/payment-gateways/paystack.png',
+      component: PaymentOnline,
+      width: 170,
+      height: 85,
+    },
     RAZORPAY: {
       name: 'RazorPay',
       value: PaymentGateway.RAZORPAY,

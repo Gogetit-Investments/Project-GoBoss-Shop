@@ -158,7 +158,7 @@ export const OrderItems = ({
                 ? t('text-update-review')
                 : t('text-write-review')}
             </button>
-            <Button
+            {/* <Button
               onClick={() =>
                 getStatus
                   ? mutate(record?.digital_file?.fileable_id, record?.name)
@@ -169,7 +169,7 @@ export const OrderItems = ({
             >
               <DownloadIcon className="h-auto w-4" />
               {t('text-download')}
-            </Button>
+            </Button> */}
           </div>
         );
       },

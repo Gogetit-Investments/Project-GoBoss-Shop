@@ -149,8 +149,8 @@ export default function Header({
       </div>
       <div className="relative flex items-center gap-5 pr-0.5 xs:gap-6 sm:gap-7">
         <SearchButton className="hidden sm:flex" />
-        <ThemeSwitcher />
-        <GridSwitcher />
+        {/* <ThemeSwitcher /> */}
+        {/* <GridSwitcher /> */}
         {asPath !== routes.checkout && (
           <CartButton className="hidden sm:flex" />
         )}

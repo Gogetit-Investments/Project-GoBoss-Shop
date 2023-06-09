@@ -31,7 +31,7 @@ export default function Card({ product }: { product: Product }) {
   const isFreeItem = isFree(product?.sale_price ?? product?.price);
   return (
     <motion.div variants={fadeInBottomWithScaleX()} title={name}>
-      <div className="group relative flex aspect-[3/2] w-full justify-center overflow-hidden">
+      <div  className="group relative flex aspect-[4/4] w-full justify-center overflow-hidden">
         <Image
           alt={name}
           layout="fill"

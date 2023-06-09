@@ -50,7 +50,7 @@ export default function ProductThumbnailGallery({
             >
               <Image
                 layout="fill"
-                objectFit="cover"
+                objectFit="contain"
                 src={item?.original ?? placeholder}
                 alt={`Product gallery ${item.id}`}
               />
@@ -89,7 +89,7 @@ export default function ProductThumbnailGallery({
             >
               <Image
                 layout="fill"
-                objectFit="cover"
+                objectFit="contain"
                 src={item?.thumbnail ?? placeholder}
                 alt={`Product thumb gallery ${item.id}`}
               />

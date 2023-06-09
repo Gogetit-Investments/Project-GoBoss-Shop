@@ -16,6 +16,8 @@ import { dehydrate, QueryClient } from 'react-query';
 import { API_ENDPOINTS } from '@/data/client/endpoints';
 import CategoryFilter from '@/components/product/category-filter';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// import { MegaMenu } from 'primereact/megamenu';
+import {MegaMenuDemo} from '@/components/mega-menu'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const queryClient = new QueryClient();
@@ -76,11 +78,12 @@ const Home: NextPageWithLayout = () => {
   return (
     <>
       <Seo
-        title="UI Design Resources, UI Kits, Wireframes, Icons and More"
-        description="Fastest digital download template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
+        title="GoBoss eCommerce platform. Number 1 stop shop for enaira usage."
+        description="Furnitures, Perishables, Confectionaries, Agricultural products, Fashion, Automobile spare parts"
         url={routes.home}
       />
       <CategoryFilter />
+      {/* <MegaMenuDemo/> */}
       <Products />
     </>
   );

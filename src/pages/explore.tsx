@@ -81,8 +81,8 @@ const Explore: NextPageWithLayout = () => {
   return (
     <>
       <Seo
-        title="UI Design Resources, UI Kits, Wireframes, Icons and More"
-        description="Fastest digital download template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
+        title="GoBoss eCommerce platform. Number 1 stop shop for enaira usage."
+        description="Furnitures, Perishables, Confectionaries, Agricultural products, Fashion, Automobile spare parts"
         url={routes.home}
       />
       <PromotionalSlider />

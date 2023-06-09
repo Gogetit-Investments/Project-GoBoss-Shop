@@ -84,7 +84,7 @@ export default function CategoryFilter({
           ref={sliderEl}
         >
           <CategoryItem
-            categoryName={'ALL'}
+            categoryName={t('text-category-all')}
             isActive={defaultActivePath === router.asPath}
             onClick={() => handleClick(defaultActivePath)}
           />

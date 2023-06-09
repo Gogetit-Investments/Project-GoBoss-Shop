@@ -71,7 +71,7 @@ export default function ProductPopupDetails() {
               alt={shop.name}
               layout="fill"
               quality={100}
-              objectFit="contain"
+              // objectFit="contain"
               src={shop.logo.thumbnail ?? placeholder}
               className="rounded-full"
             />
@@ -113,21 +113,21 @@ export default function ProductPopupDetails() {
                 {total_downloads ?? "0 in stock"} 
               </div>
             </div>
-            <ProductInformation
-              
+            {/* <ProductInformation
+             
               created_at={created_at}
               updated_at={updated_at}
-              layoutType={type.name}
+              // layoutType={type.name}
               //@ts-ignore
               icon={type?.icon}
               className="border-t border-light-500 py-5 dark:border-dark-500 lg:py-6 3xl:py-10"
-            />
+            /> */}
             <div className="border-t border-light-500 pt-5 dark:border-dark-500">
-              <ProductSocialShare productSlug={slug} />
+              {/* <ProductSocialShare productSlug={slug} /> */}
             </div>
           </div>
           <div className="flex flex-col-reverse items-center xs:flex-row xs:gap-2.5 xs:pb-4 md:flex-nowrap md:gap-3.5 lg:gap-4 3xl:pb-14">
-            {/* {!isFreeItem ? (
+            {!isFreeItem ? (
               <AddToCart
                 item={product}
                 toastClassName="-mt-10 xs:mt-0"
@@ -140,7 +140,7 @@ export default function ProductPopupDetails() {
                 productName={name}
                 className="mt-2.5 w-full flex-1 xs:mt-0"
               />
-            )} */}
+            )}
             {/* {Boolean(preview_url) && (
               <a
                 href={preview_url}

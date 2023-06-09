@@ -49,13 +49,13 @@ export default function ProductDetailsPaper({ product, className }: Props) {
         </div>
 
         <div className="items-center pt-1.5 rtl:space-x-reverse lg:flex lg:space-x-6 lg:pt-2.5 3xl:pt-4">
-          <div className="flex items-center pb-4 lg:pb-0">
+          <div className="flex items-center pb-4 lg:pb-0"><b>Sold by: &nbsp;</b>
             <div className="relative flex h-7 w-7 flex-shrink-0">
               <Image
                 alt={shop?.name}
                 layout="fill"
                 quality={100}
-                objectFit="cover"
+                objectFit="contain"
                 src={shop?.logo?.thumbnail ?? placeholder}
                 className="rounded-full"
               />
@@ -76,10 +76,10 @@ export default function ProductDetailsPaper({ product, className }: Props) {
                 {pluralize(t('text-sale'), orders_count, true)}
               </div>
             )}
-            <div className="flex items-center tracking-[.1px] text-dark dark:text-light">
+            {/* <div className="flex items-center tracking-[.1px] text-dark dark:text-light">
               <DownloadIcon className="h-[18px] w-[18px] text-dark-900 ltr:mr-2.5 rtl:ml-2.5 dark:text-light-900" />
               {pluralize(t('text-download'), total_downloads, true)}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

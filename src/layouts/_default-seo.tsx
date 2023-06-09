@@ -31,7 +31,7 @@ const DefaultSeo = () => {
       ]}
       title={settings?.seo?.metaTitle}
       titleTemplate={`${
-        settings?.seo?.metaTitle || settings?.siteTitle || 'GoBoss e-Commerce Platform'
+        'GoBoss e-Commerce Platform'
       } | %s`}
       defaultTitle="GoBoss e-Commerce Platform"
       description={settings?.seo?.metaDescription || settings?.siteSubtitle}

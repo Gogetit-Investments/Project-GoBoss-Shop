@@ -49,6 +49,7 @@ const CheckoutPage: NextPageWithLayout = () => {
       })),
     });
   }
+  
   return (
     <>
       <Seo
@@ -110,7 +111,7 @@ const CheckoutPage: NextPageWithLayout = () => {
                   onClick={verify}
                   isLoading={isLoading}
                 >
-                  {t('text-check-availability')}
+                  {'Confirm'}
                 </Button>
               </div>
             )}

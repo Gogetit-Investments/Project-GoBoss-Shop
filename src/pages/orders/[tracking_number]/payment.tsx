@@ -148,8 +148,10 @@ const OrderView = ({ order, loadingStatus }: OrderViewProps) => {
             <div className="mb-6 grid gap-4 sm:grid-cols-2 md:mb-12 lg:grid-cols-4">
               <Card
                 title={t('text-order-number')}
-                details={order?.tracking_number}
+                details={order?.tracking_number} 
               />
+
+              
               <Card
                 title={t('text-date')}
                 details={dayjs(order?.created_at).format('MMMM D, YYYY')}
@@ -214,9 +216,9 @@ const OrderView = ({ order, loadingStatus }: OrderViewProps) => {
                 </h2>
                 <div>
                   <div className="mb-12 flex items-start rounded border border-gray-200 p-4 dark:border-dark-600">
-                    <span className="mt-0.5 flex h-4 w-4 items-center justify-center rounded-sm bg-dark px-2 ltr:mr-3 rtl:ml-3 dark:bg-light">
+                    {/* <span className="mt-0.5 flex h-4 w-4 items-center justify-center rounded-sm bg-dark px-2 ltr:mr-3 rtl:ml-3 dark:bg-light">
                       <CheckMark className="h-2 w-2 shrink-0 text-light dark:text-dark" />
-                    </span>
+                    </span> */}
                     <p className="text-heading text-sm">
                       <span className="font-bold">{t('text-note')}:</span>{' '}
                       {t('message-sub-order')}

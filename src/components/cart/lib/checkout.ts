@@ -16,7 +16,7 @@ interface CheckoutState {
 }
 
 export const defaultCheckout: CheckoutState = {
-  payment_gateway: PaymentGateway.STRIPE,
+  payment_gateway: PaymentGateway.PAYSTACK,
   verified_response: null,
 };
 

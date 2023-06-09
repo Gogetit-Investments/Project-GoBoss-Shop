@@ -14,7 +14,9 @@ module.exports = withPWA({
   },
   images: {
     domains: [
-      '139.59.176.153',
+      'shop.goboss.com.ng',
+      'shop.goboss.com.ng/admin',
+      'shop.goboss.com.ng/backend',
       'localhost',
       '127.0.0.1:8000',
       'maps.googleapis.com',

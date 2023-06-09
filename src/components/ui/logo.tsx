@@ -25,20 +25,26 @@ export default function Logo({
       {...props}
     >
       <span
-        className="relative overflow-hidden"
+      
+        className="relative "
+        // className="relative overflow-hidden"
         style={{
-          width: siteSettings?.width,
-          height: siteSettings?.height,
+          width: 270,
+          height: 100,
+          display: 'flex', alignItems: 'center', 
         }}
       >
         {isMounted && isDarkMode && (
-          <Image
-            src={settings?.dark_logo?.original ?? darkLogo}
-            layout="fill"
-            objectFit="contain"
-            loading="eager"
-            alt={settings?.siteTitle ?? 'GoBoss Logo Dark'}
-          />
+   <Image
+   src={settings?.dark_logo?.original ?? darkLogo}
+   layout="responsive" // Use "responsive" layout to maintain aspect ratio and adjust size
+   width={500} // Set the desired width of the image
+   height={300} // Set the desired height of the image
+   objectFit="contain" // Adjust the object fit style as needed
+   loading="eager"
+   alt={settings?.siteTitle ?? 'GoBoss Logo Dark'}
+ />
+ 
         )}
         {isMounted && !isDarkMode && (
           // <Image
@@ -51,11 +57,16 @@ export default function Logo({
           <Image
           src = {'/image/logo.jpeg'}
           // src={logo?.original ?? siteSettings.logo.url}
-          alt={settings?.siteTitle ?? 'GoBoss Logo Ligt'}
-          layout="fill"
+          alt={settings?.siteTitle ?? 'GoBoss Logo Light'}
+          layout="fixed"
           objectFit="contain"
           loading="eager"
+          width={150} // Set the desired width of the image
+          height={60}// Set the desired height of the image
+          // quality={20}
         />
+
+        
         )}
       </span>
     </AnchorLink>
