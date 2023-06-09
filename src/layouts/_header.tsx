@@ -135,6 +135,11 @@ export default function Header({
   const isMultiLangEnable =
     process.env.NEXT_PUBLIC_ENABLE_MULTI_LANG === 'true' &&
     !!process.env.NEXT_PUBLIC_AVAILABLE_LANGUAGES;
+
+
+
+
+    
   return (
     <header className="app-header sticky top-0 z-30 flex h-16 w-full items-center justify-between border-b border-light-300 bg-light py-1 px-4 ltr:left-0 rtl:right-0 dark:border-dark-300 dark:bg-dark-250 sm:h-[70px] sm:px-6">
       <div className="flex items-center gap-4">
@@ -149,8 +154,8 @@ export default function Header({
       </div>
       <div className="relative flex items-center gap-5 pr-0.5 xs:gap-6 sm:gap-7">
         <SearchButton className="hidden sm:flex" />
-        {/* <ThemeSwitcher /> */}
-        {/* <GridSwitcher /> */}
+        <ThemeSwitcher />
+        <GridSwitcher />
         {asPath !== routes.checkout && (
           <CartButton className="hidden sm:flex" />
         )}
@@ -161,14 +166,14 @@ export default function Header({
         ) : (
           ''
         )}
-        <a
-          href={`${process.env.NEXT_PUBLIC_ADMIN_URL}/register`}
-          target="_blank"
-          rel="noreferrer"
-          className="focus:ring-accent-700 hidden h-9 shrink-0 items-center justify-center rounded border border-transparent bg-brand px-3 py-0 text-sm font-semibold leading-none text-light outline-none transition duration-300 ease-in-out hover:bg-brand-dark focus:shadow focus:outline-none focus:ring-1 sm:inline-flex"
-        >
-          {t('text-become-seller')}
-        </a>
+<a
+  href={`${process.env.NEXT_PUBLIC_ADMIN_URL}/register`}
+  target="_blank"
+  rel="noreferrer"
+  className="focus:ring-accent-700 hidden h-9 shrink-0 items-center justify-center rounded border-2 border-orange-500 bg-white px-3 py-0 text-sm font-semibold leading-none text-black outline-none transition duration-300 ease-in-out hover:bg-orange-500 hover:text-white hover:border-transparent sm:inline-flex"
+>
+  {t('text-become-seller')}
+</a>
         <LoginMenu />
       </div>
     </header>
