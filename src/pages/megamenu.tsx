@@ -25,31 +25,53 @@ function IconDropdown({ menuItems, classes, fontSize }) {
     setOpenSubMenuIndex(null);
   };
 
+  if (!Array.isArray(menuItems)) {
+    console.error("menuItems must be an array");
+    return null;
+  }
+
   return (
-    <DropdownContainer onMouseLeave={handleMouseLeave}>
+    <DropdownContainer>
       <MenuListStyled>
-        {menuItems.map((item, i) => (
-          <MenuItemStyled
-            key={`menu-item-${i}`}
-            onClick={item.onClick}
-            classes={{ root: classes.menuItem }}
-            fontSize={fontSize}
-            onMouseEnter={() => handleMouseEnter(i)}
-          >
-            {item.icon && <ListItemIconStyled>{item.icon}</ListItemIconStyled>}
-            {item.content}
-          </MenuItemStyled>
-        ))}
+        {menuItems.map((item, i) => {
+          if (!item || typeof item !== "object" || typeof item.content === "undefined" || typeof item.onClick !== "function") {
+            console.error(`Invalid menu item at index ${i}`);
+            return null;
+          }
+
+          return (
+            <MenuItemStyled
+              key={`menu-item-${i}`}
+              onClick={item.onClick}
+              classes={{ root: classes.menuItem }}
+              fontSize={fontSize}
+              onMouseEnter={() => handleMouseEnter(i)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {item.icon && <ListItemIconStyled>{item.icon}</ListItemIconStyled>}
+              {item.content}
+            </MenuItemStyled>
+          );
+        })}
       </MenuListStyled>
-      {menuItems.map((item, i) => (
-        <SubMenuContainer
-          key={`submenu-container-${i}`}
-          visible={openSubMenuIndex === i}
-          onClick={handleClickOutside}
-        >
-          {item.submenu && (
-            <SubMenuList>
-              {item.submenu.map((subItem, j) => (
+      {menuItems.map((item, i) => {
+        if (!item || typeof item !== "object" || !Array.isArray(item.submenu)) {
+          return null;
+        }
+
+        return (
+          <SubMenuContainer
+            key={`submenu-container-${i}`}
+            visible={openSubMenuIndex === i}
+            onMouseLeave={handleMouseLeave}
+          >
+            {item.submenu.map((subItem, j) => {
+              if (!subItem || typeof subItem !== "object" || typeof subItem.content === "undefined" || typeof subItem.onClick !== "function") {
+                console.error(`Invalid submenu item at index ${j} of menu item at index ${i}`);
+                return null;
+              }
+
+              return (
                 <MenuItemStyled
                   key={`submenu-item-${j}`}
                   onClick={subItem.onClick}
@@ -59,11 +81,11 @@ function IconDropdown({ menuItems, classes, fontSize }) {
                   {subItem.icon && <ListItemIconStyled>{subItem.icon}</ListItemIconStyled>}
                   {subItem.content}
                 </MenuItemStyled>
-              ))}
-            </SubMenuList>
-          )}
-        </SubMenuContainer>
-      ))}
+              );
+            })}
+          </SubMenuContainer>
+        );
+      })}
     </DropdownContainer>
   );
 }
@@ -75,7 +97,6 @@ const DropdownContainer = styled.div`
   z-index: 2;
   left: 28px;
   top: 10px;
-  
   width: fit-content;
 `;
 
@@ -91,14 +112,6 @@ const SubMenuContainer = styled.div`
   left: 208px;
   right: 0;
   display: ${(props) => (props.visible ? "block" : "none")};
-`;
-
-const SubMenuList = styled(MenuList)`
-  background-color: white !important;
-  padding-left: 16px;
-  padding-right: 16px;
-  width: 712px;
-  height: 384px !important;
 `;
 
 const MenuItemStyled = styled(MenuItem)`
