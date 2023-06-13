@@ -43,6 +43,7 @@
     "rc-rate": "2.9.1",
     "rc-table": "7.22.2",
     "react": "17.0.2",
+    "react-animated-slider": "^2.0.0",
     "react-avatar": "4.0.0",
     "react-confetti": "6.0.1",
     "react-content-loader": "6.1.0",

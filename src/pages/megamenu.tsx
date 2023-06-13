@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { MenuItem, MenuList } from "@material-ui/core";
 import { createStyles, withStyles } from "@material-ui/core/styles";
@@ -12,18 +12,27 @@ const styles = createStyles({
 
 function IconDropdown({ menuItems, classes, fontSize }) {
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(null);
+  const [hoverSubMenuIndex, setHoverSubMenuIndex] = useState(null);
+  const submenuRef = useRef(null);
 
   const handleMouseEnter = (index) => {
-    setOpenSubMenuIndex(index);
+    if (openSubMenuIndex !== index) {
+      setOpenSubMenuIndex(index);
+    }
   };
 
-  const handleMouseLeave = () => {
-    setOpenSubMenuIndex(null);
+  const handleClickOutside = (event) => {
+    if (submenuRef.current && !submenuRef.current.contains(event.target)) {
+      setOpenSubMenuIndex(null);
+    }
   };
 
-  const handleClickOutside = () => {
-    setOpenSubMenuIndex(null);
-  };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   if (!Array.isArray(menuItems)) {
     console.error("menuItems must be an array");
@@ -46,7 +55,7 @@ function IconDropdown({ menuItems, classes, fontSize }) {
               classes={{ root: classes.menuItem }}
               fontSize={fontSize}
               onMouseEnter={() => handleMouseEnter(i)}
-              onMouseLeave={handleMouseLeave}
+              onMouseLeave={() => setHoverSubMenuIndex(null)}
             >
               {item.icon && <ListItemIconStyled>{item.icon}</ListItemIconStyled>}
               {item.content}
@@ -62,27 +71,31 @@ function IconDropdown({ menuItems, classes, fontSize }) {
         return (
           <SubMenuContainer
             key={`submenu-container-${i}`}
-            visible={openSubMenuIndex === i}
-            onMouseLeave={handleMouseLeave}
+            ref={submenuRef}
+            visible={openSubMenuIndex === i || hoverSubMenuIndex === i}
+            onMouseEnter={() => setHoverSubMenuIndex(i)}
+            onMouseLeave={() => setHoverSubMenuIndex(null)}
           >
-            {item.submenu.map((subItem, j) => {
-              if (!subItem || typeof subItem !== "object" || typeof subItem.content === "undefined" || typeof subItem.onClick !== "function") {
-                console.error(`Invalid submenu item at index ${j} of menu item at index ${i}`);
-                return null;
-              }
+            <SubMenuList>
+              {item.submenu.map((subItem, j) => {
+                if (!subItem || typeof subItem !== "object" || typeof subItem.content === "undefined" || typeof subItem.onClick !== "function") {
+                  console.error(`Invalid submenu item at index ${j} of menu item at index ${i}`);
+                  return null;
+                }
 
-              return (
-                <MenuItemStyled
-                  key={`submenu-item-${j}`}
-                  onClick={subItem.onClick}
-                  classes={{ root: classes.menuItem }}
-                  fontSize={fontSize}
-                >
-                  {subItem.icon && <ListItemIconStyled>{subItem.icon}</ListItemIconStyled>}
-                  {subItem.content}
-                </MenuItemStyled>
-              );
-            })}
+                return (
+                  <MenuItemStyled
+                    key={`submenu-item-${j}`}
+                    onClick={subItem.onClick}
+                    classes={{ root: classes.menuItem }}
+                    fontSize={fontSize}
+                  >
+                    {subItem.icon && <ListItemIconStyled>{subItem.icon}</ListItemIconStyled>}
+                    {subItem.content}
+                  </MenuItemStyled>
+                );
+              })}
+            </SubMenuList>
           </SubMenuContainer>
         );
       })}
@@ -112,6 +125,14 @@ const SubMenuContainer = styled.div`
   left: 208px;
   right: 0;
   display: ${(props) => (props.visible ? "block" : "none")};
+`;
+
+const SubMenuList = styled(MenuList)`
+  background-color: white !important;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 712px;
+  height: 384px !important;
 `;
 
 const MenuItemStyled = styled(MenuItem)`

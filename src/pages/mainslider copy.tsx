@@ -4,7 +4,7 @@ import Carousel from 'react-elastic-carousel';
 class MainSlider extends Component {
   state = {
     items: [
-      // { id: 1, title: 'Refrigerators', imageUrl: 'https://ng.jumia.is/cms/0-1-cpr/2023/large-item-updated/design-update/Desktop_Homepage_Slider__712x384.png', link: 'https://example.com' },
+      { id: 1, title: 'Refrigerators', imageUrl: 'https://ng.jumia.is/cms/0-1-cpr/2023/large-item-updated/design-update/Desktop_Homepage_Slider__712x384.png', link: 'https://example.com' },
       { id: 2, title: 'Refrigerators', imageUrl: 'https://ng.jumia.is/cms/0-6-anniversary/2023/initiatives/712x384.gif', link: 'https://example.com' },
     ],
     itemsToShow: 1, // Display one item at a time
