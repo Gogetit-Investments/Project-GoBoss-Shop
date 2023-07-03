@@ -66,27 +66,27 @@ export default function ProductPopupDetails() {
           </AnchorLink>
         </h2>
         <div className="flex flex-shrink-0 items-center px-2.5 py-1">
+         
           <div className="relative flex h-5 w-5 flex-shrink-0 md:h-6 md:w-6">
-            <Image
-              alt={shop.name}
-              layout="fill"
-              quality={100}
-              // objectFit="contain"
-              src={shop.logo.thumbnail ?? placeholder}
-              className="rounded-full"
-            />
-          </div>
-          <h3
-            title={name}
-            className="text-13px font-medium text-dark-600 ltr:pl-2 rtl:pr-2 dark:text-light-800 ltr:md:pl-2.5 rtl:md:pr-2.5"
-          >
-            <AnchorLink
-              href={routes.shopUrl(shop?.slug)}
-              className="hover:text-accent transition-colors"
-            >
-              {shop?.name}
-            </AnchorLink>
-          </h3>
+  <Image
+    alt={shop?.name}
+    layout="fill"
+    quality={100}
+    src={shop?.logo?.thumbnail ?? placeholder}
+    className="rounded-full"
+  />
+</div>
+<h3
+  title={name}
+  className="text-13px font-medium text-dark-600 ltr:pl-2 rtl:pr-2 dark:text-light-800 ltr:md:pl-2.5 rtl:md:pr-2.5"
+>
+  <AnchorLink
+    href={routes.shopUrl(shop?.slug)}
+    className="hover:text-accent transition-colors"
+  >
+    {shop?.name}
+  </AnchorLink>
+</h3>
 
           <FavoriteButton productId={product?.id} />
         </div>
