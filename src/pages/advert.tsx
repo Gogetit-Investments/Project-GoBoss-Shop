@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from 'react-elastic-carousel';
+import { useMediaQuery } from 'react-responsive';
 
 class Advert extends Component {
   state = {
@@ -10,7 +11,6 @@ class Advert extends Component {
   };
 
   componentDidMount() {
-    // Determine the number of items to show based on screen size
     this.updateItemsToShow();
     window.addEventListener('resize', this.updateItemsToShow);
   }
@@ -29,13 +29,14 @@ class Advert extends Component {
     const { items, itemsToShow } = this.state;
 
     const itemStyle = {
+      marginTop: '-370px',
       width: '712px', // Set the width to 712px
       height: '384px', // Set the height to 384px
       margin: '0 auto',
       textAlign: 'center',
       boxShadow: 'none',
       border: 'none',
-      marginTop: '10px', // Adjust the top margin as desired
+      // marginTop: '10px', // Adjust the top margin as desired
       transition: 'transform 0.3s ease', // Transition for hover effect
       transformOrigin: 'center bottom',
       borderRadius: '4px',
@@ -64,30 +65,43 @@ class Advert extends Component {
 
     return (
       <div style={carouselContainerStyle}>
-        <Carousel itemsToShow={itemsToShow} itemPadding={[0, 10]} pagination={true} showArrows={false}>
-          {items.map((item) => (
-            <a
-              key={item.id}
-              href={item.link}
-              target="_blank"
-              rel="noreferrer"
-              style={{ textDecoration: 'none' }}
-            >
-              <div
-                style={{
-                  ...itemStyle,
-                  ...(item.isHovered ? hoveredItemStyle : {}),
-                }}
-              >
-                <img src={item.imageUrl} alt={item.title} style={imageStyle} />
-                <div>{item.title}</div>
-              </div>
-            </a>
-          ))}
-        </Carousel>
+        <ResponsiveAdvert
+          items={items}
+          itemsToShow={itemsToShow}
+          itemStyle={itemStyle}
+          hoveredItemStyle={hoveredItemStyle}
+          imageStyle={imageStyle}
+        />
       </div>
     );
   }
 }
+
+const ResponsiveAdvert = ({ items, itemsToShow, itemStyle, hoveredItemStyle, imageStyle }) => {
+  const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
+
+  if (isMobile) {
+    return null;
+  }
+
+  return (
+    <Carousel itemsToShow={itemsToShow} itemPadding={[0, 10]} pagination={false} showArrows={false}>
+      {items.map((item) => (
+        <a
+          key={item.id}
+          href={item.link}
+          target="_blank"
+          rel="noreferrer"
+          style={{ textDecoration: 'none' }}
+        >
+          <div style={{ ...itemStyle, ...(item.isHovered ? hoveredItemStyle : {}) }}>
+            <img src={item.imageUrl} alt={item.title} style={imageStyle} />
+            <div>{item.title}</div>
+          </div>
+        </a>
+      ))}
+    </Carousel>
+  );
+};
 
 export default Advert;

@@ -24,7 +24,7 @@ module.exports = withPWA({
       'pixarlaravel.s3.ap-southeast-1.amazonaws.com',
       'backend.goboss.com.ng',
       'ng.jumia.is',
-      'goboss.s3.amazonaws.com'
+      'goboss-ng.s3.amazonaws.com'
     ],
   },
   ...(process.env.APPLICATION_MODE === 'production' && {

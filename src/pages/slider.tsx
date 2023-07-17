@@ -86,8 +86,8 @@ class Slider extends Component {
       marginTop: '20px',
       background: 'white',
       paddingBottom: '8px',
-      marginLeft: '28px',
-      marginRight: '28px',
+      marginLeft: '18px',
+      marginRight: '18px',
     };
 
     return (

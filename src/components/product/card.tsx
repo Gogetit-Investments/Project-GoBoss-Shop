@@ -16,7 +16,7 @@ import { isFree } from '@/lib/is-free';
 import { useTranslation } from 'next-i18next';
 
 export default function Card({ product }: { product: Product }) {
-  const { name, slug, image, shop } = product ?? {};
+  const { name, slug, image, shop, id } = product ?? {};
   const { openModal } = useModalAction();
   const { isGridCompact } = useGridSwitcher();
   const { price, basePrice } = usePrice({
@@ -26,6 +26,7 @@ export default function Card({ product }: { product: Product }) {
   const goToDetailsPage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     Router.push(routes.productUrl(slug));
+    
   };
   const { t } = useTranslation('common');
   const isFreeItem = isFree(product?.sale_price ?? product?.price);
@@ -36,15 +37,17 @@ export default function Card({ product }: { product: Product }) {
           alt={name}
           layout="fill"
           quality={100}
-          objectFit="contain"
+          objectFit="contain" 
           src={image?.thumbnail ?? placeholder}
           className="bg-light-500 dark:bg-dark-400"
         />
+        
         <div
           onClick={() => openModal('PRODUCT_DETAILS', { slug })}
           className="absolute top-0 left-0 z-10 flex h-full w-full cursor-pointer items-center justify-center gap-9 bg-dark/60 p-4 opacity-0 backdrop-blur-sm transition-all group-hover:gap-5 group-hover:opacity-100 dark:bg-dark/70"
         >
-          <button
+         
+          {/* <button
             className={cn(
               'text-center font-medium text-light',
               isGridCompact ? 'text-xs' : 'text-13px'
@@ -61,8 +64,8 @@ export default function Card({ product }: { product: Product }) {
               />
             </div>
             {t('text-preview')}
-          </button>
-          <button
+          </button> */}
+          {/* <button
             onClick={goToDetailsPage}
             className={cn(
               'relative z-[11] text-center font-medium text-light',
@@ -80,7 +83,7 @@ export default function Card({ product }: { product: Product }) {
               />
             </div>
             {t('text-details')}
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="flex items-start justify-between pt-3.5">

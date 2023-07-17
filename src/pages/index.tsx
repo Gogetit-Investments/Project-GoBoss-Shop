@@ -21,6 +21,9 @@ import IconDropdown from './megamenu';
 import { FaHome, FaUser, FaCog, FaTractor, FaBatteryFull, FaCar, FaTshirt, FaChair, FaTable, FaApple, FaBreadSlice, FaShoppingCart, FaBuilding, FaServicestack, FaDotCircle } from "react-icons/fa";
 import MainSlider from './mainslider';
 import Advert from './advert';
+import DemoCarousel from './slideshow';
+import ReactDOM from 'react-dom';
+// import DemoCarousel from './DemoCarousel';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const queryClient = new QueryClient();
@@ -389,10 +392,13 @@ const Home: NextPageWithLayout = () => {
         url={routes.home}
       />
       {/* <CategoryFilter /> */}
-      <IconDropdown menuItems={menuItems} fontSize="13px" />
-<MainSlider />
-<Advert/>
+      {/* <IconDropdown menuItems={menuItems} fontSize="13px" /> */}
+{/* <MainSlider /> */}
+{/* <Advert/> */}
+<DemoCarousel/>
+
       <Slider />
+
 
 
       <Grid
