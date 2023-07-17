@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import IconDropdown from './megamenu';
@@ -7,6 +7,8 @@ import styled from 'styled-components';
 
 const DemoCarousel: React.FC = () => {
   const containerRef = useRef(null);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
     // {
@@ -301,12 +303,12 @@ const DemoCarousel: React.FC = () => {
 
   return (
     <Container>
-      <HamburgerButton>
+      <HamburgerButton onClick={() => setIsMenuOpen(true)}>
         <FaBars />
       </HamburgerButton>
       <ContentContainer ref={containerRef}>
-        <MenuWrapper>
-          <CloseButton>
+        <MenuWrapper isOpen={isMenuOpen}>
+          <CloseButton onClick={() => setIsMenuOpen(false)}>
             <FaTimes />
           </CloseButton>
           <IconDropdown menuItems={menuItems} fontSize="13px" />
@@ -355,23 +357,19 @@ const ContentContainer = styled.div`
 `;
 
 const MenuWrapper = styled.div`
-  display: none;
-
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    background-color: white;
-    top: 35px;
-    left: 0;
-    padding: 10px;
-    z-index: 9999;
-    width: 100%;
-    max-height: calc(100vh - 35px);
-    overflow-y: auto;
-  }
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  background-color: white;
+  top: 35px;
+  left: 0;
+  padding: 10px;
+  z-index: 9999;
+  width: 100%;
+  max-height: calc(100vh - 35px);
+  overflow-y: auto;
 `;
 
 const CloseButton = styled.button`
@@ -393,4 +391,4 @@ const CarouselContainer = styled.div`
 
 export default DemoCarousel;
 
-  
+
