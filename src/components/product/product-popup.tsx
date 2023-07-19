@@ -48,6 +48,7 @@ export default function ProductPopupDetails() {
     type,
     price,
     sale_price,
+    quantity,
   } = product ?? {};
   const isFreeItem = isFree(sale_price ?? price);
   const previews = getPreviews(gallery, image);
@@ -110,7 +111,7 @@ export default function ProductPopupDetails() {
               <div className="flex items-center tracking-[.1px] text-dark dark:text-light">
                 {/* <DownloadIcon className="h-[18px] w-[18px] text-dark-900 ltr:mr-2.5 rtl:ml-2.5 dark:text-light-800" /> */}
               <StarIcon className="h-[18px] w-[18px] text-dark-900 ltr:mr-2.5 rtl:ml-2.5 dark:text-light-800"/>
-                {total_downloads ?? "0 in stock"} 
+                {quantity + " in stock" ?? "0 in stock"} 
               </div>
             </div>
             {/* <ProductInformation
