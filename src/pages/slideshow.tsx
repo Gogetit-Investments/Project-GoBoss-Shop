@@ -4,10 +4,61 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import IconDropdown from './megamenu';
 import { FaTractor, FaBatteryFull, FaCar, FaTshirt, FaTable, FaApple, FaBreadSlice, FaShoppingCart, FaBuilding, FaServicestack, FaDotCircle, FaBars, FaTimes } from 'react-icons/fa';
 import styled from 'styled-components';
+import Advert from './advert';
+import { useMediaQuery } from 'react-responsive';
+
+const MenuItem = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  svg {
+    margin-right: 8px;
+  }
+`;
+
+
+const menuItems2 = [
+  {
+    icon: <FaTractor />,
+    content: "Agriculture",
+    onClick: () => {
+      // Handle click event for Agriculture menu item
+    },
+    submenu: [
+      {
+        icon: null,
+        content: "Farm implements",
+        onClick: () => {
+          // Handle click event for Submenu 1
+        },
+      },
+      {
+        icon: null,
+        content: "Crops",
+        onClick: () => {
+          // Handle click event for Submenu 2
+        },
+      },
+    ],
+  },
+];
+
+const VerticalMenu = ({ menuItems2 }) => {
+  return (
+    <MenuWrapper>
+      {menuItems2.map((menuItem2, index) => (
+        <MenuItem key={index}>
+          {menuItem2.icon}
+          {menuItem2.content}
+        </MenuItem>
+      ))}
+    </MenuWrapper>
+  );
+};
 
 const DemoCarousel: React.FC = () => {
   const containerRef = useRef(null);
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
@@ -299,14 +350,18 @@ const DemoCarousel: React.FC = () => {
     },
   ];
 
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 768px)' });
+  const imageUrl1 = '/image/advertise_here.png';
 
 
+  
   return (
     <Container>
       <HamburgerButton onClick={() => setIsMenuOpen(true)}>
         <FaBars />
       </HamburgerButton>
-      <ContentContainer ref={containerRef}>
+      <ContentContainer>
+      {!isSmallScreen && <VerticalMenu menuItems2={menuItems2} />}
         <MenuWrapper isOpen={isMenuOpen}>
           <CloseButton onClick={() => setIsMenuOpen(false)}>
             <FaTimes />
@@ -323,14 +378,20 @@ const DemoCarousel: React.FC = () => {
             </div>
           </Carousel>
         </CarouselContainer>
+        {/* Conditionally render the Image Placeholder */}
+        {!isSmallScreen && <ImagePlaceholder src={imageUrl1} alt="Carousel Image 1" />}
       </ContentContainer>
+{/* <Advert/> */}
     </Container>
-  );
+
+);
 };
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 5px;
+  
 `;
 
 const HamburgerButton = styled.button`
@@ -348,13 +409,13 @@ const HamburgerButton = styled.button`
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: stretch; /* Update align-items property */
   justify-content: flex-start;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
+  /* Remove the height property to allow the container to adjust its height based on content */
 `;
+
+
 
 const MenuWrapper = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
@@ -370,6 +431,17 @@ const MenuWrapper = styled.div`
   width: 100%;
   max-height: calc(100vh - 35px);
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    padding: 10px;
+    z-index: 9999;
+    overflow-y: auto;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -380,15 +452,41 @@ const CloseButton = styled.button`
   margin-bottom: 5px;
 `;
 
+
 const CarouselContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  flex: 1; /* Expand to fill the available space within ContentContainer */
   max-width: 712px;
-  margin-left: 18px;
-  margin-right: 18px;
-  margin-top: 5px;
+  margin: 0 18px; /* Adjust the margins as needed */
+  overflow: hidden; /* Hide any content that overflows the container */
+  display: flex; /* Set the CarouselContainer as a flex container */
+  flex-direction: column; /* Ensure carousel content is stacked vertically */
+  align-items: center; /* Center the content horizontally */
+
+  /* Remove the height styles to let the container adjust its height based on content */
+
+  /* Adjust the position of the carousel content within the container */
+  .carousel-root {
+    flex: 1; /* Fill the available vertical space within the container */
+  }
+`;
+
+
+
+const CenteredSlider = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:100px;
+`;
+
+
+const ImagePlaceholder = styled.img`
+  width: 470px;
+  height: 384px;
+  background-color: #f1f1f1; /* Placeholder background color */
+  margin-left: -10px; /* Adjust the margin as needed */
 `;
 
 export default DemoCarousel;
-
 

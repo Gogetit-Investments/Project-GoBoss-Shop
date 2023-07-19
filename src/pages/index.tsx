@@ -394,8 +394,8 @@ const Home: NextPageWithLayout = () => {
       {/* <CategoryFilter /> */}
       {/* <IconDropdown menuItems={menuItems} fontSize="13px" /> */}
 {/* <MainSlider /> */}
-{/* <Advert/> */}
 <DemoCarousel/>
+{/* <Advert/> */}
 
       <Slider />
 
