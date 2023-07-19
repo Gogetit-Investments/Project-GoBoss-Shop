@@ -1,6 +1,8 @@
 import Button from '@/components/ui/button';
 import { SearchIcon } from '@/components/icons/search-icon';
 import { useSearch } from '@/components/search/search-view';
+import LongSearch from './long-search';
+import { useMediaQuery } from 'react-responsive';
 
 export default function SearchButton({
   className = 'flex',
@@ -8,6 +10,9 @@ export default function SearchButton({
   className?: string;
 }) {
   const { openSearch } = useSearch();
+
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 768px)' });
+
   return (
     <Button
       variant="icon"
@@ -15,7 +20,13 @@ export default function SearchButton({
       className={className}
       onClick={openSearch}
     >
-      <SearchIcon className="h-5 w-5" />
+
+{isSmallScreen ? <SearchIcon className="h-5 w-5" />
+         : <LongSearch />}
+
+
+      {/* // <SearchIcon className="h-5 w-5" />
+      // <LongSearch /> */}
     </Button>
   );
 }
