@@ -1,5 +1,5 @@
+import React from 'react';
 import styled from 'styled-components';
-// import { SearchIcon } from 'your-icon-library'; // Replace 'your-icon-library' with the actual library name
 import { SearchIcon } from '@/components/icons/search-icon';
 
 const LongSearchBox = styled.div`
@@ -7,15 +7,24 @@ const LongSearchBox = styled.div`
   align-items: center;
   border: 1px solid #ff7034;
   border-radius: 5px;
-  padding: 4px;
-  width: 400px; /* You can adjust the width to your preference */
+  padding: 3px;
+  width: 700px; /* Default width for larger screens */
+  max-width: 100%; /* Ensures the search box doesn't exceed the container's width */
+  box-sizing: border-box; /* Prevents padding from increasing the width */
+  margin-right: 100px;
+  margin-left: 100px;
+  overflow: hidden;
+  @media (max-width: 1180px) {
+    width: 90%; /* Decrease width on smaller screens */
+  }
 `;
 
 const SearchInput = styled.input`
   flex: 1;
   border: none;
   outline: none;
-  margin-left: 8px;
+//   margin-left: 2px;
+  
 `;
 
 const LongSearch = () => {

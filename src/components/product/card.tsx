@@ -108,7 +108,7 @@ export default function Card({ product }: { product: Product }) {
             href={routes.shopUrl(shop?.slug)}
             className="font-medium text-light-base hover:text-brand dark:text-dark-800 dark:hover:text-brand"
           >
-            {shop?.name}
+            {shop?.name} - {shop?.address?.city}
           </AnchorLink>
         </div>
 
