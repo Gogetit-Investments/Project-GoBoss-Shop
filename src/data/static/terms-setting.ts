@@ -44,4 +44,46 @@ export const termsData = [
     title: 'text-terms-nine-title',
     description: 'text-terms-nine-desc',
   },
+
+  {
+    id: '10',
+    title: 'text-terms-ten-title',
+    description: 'text-terms-ten-desc',
+  },
+
+  {
+    id: '11',
+    title: 'text-terms-eleven-title',
+    description: 'text-terms-eleven-desc',
+  },
+
+  {
+    id: '12',
+    title: 'text-terms-twelve-title',
+    description: 'text-terms-twelve-desc',
+  },
+
+  {
+    id: '13',
+    title: 'text-terms-thirteen-title',
+    description: 'text-terms-thirteen-desc',
+  },
+
+  {
+    id: '14',
+    title: 'text-terms-fourteen-title',
+    description: 'text-terms-fourteen-desc',
+  },
+
+  {
+    id: '15',
+    title: 'text-terms-fifteen-title',
+    description: 'text-terms-fifteen-desc',
+  },
+
+  {
+    id: '16',
+    title: 'text-terms-sixteen-title',
+    description: 'text-terms-sixteen-desc',
+  },
 ];

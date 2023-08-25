@@ -20,6 +20,7 @@ import teamThumbThree from '@/assets/images/team/3.png';
 import teamThumbFour from '@/assets/images/team/4.png';
 import teamThumbFive from '@/assets/images/team/5.png';
 import teamThumbSix from '@/assets/images/team/6.png';
+import Layout from '@/layouts/_layout';
 
 const featuredData = [
   {
@@ -183,8 +184,12 @@ const AboutPage: NextPageWithLayout = () => {
   );
 };
 
+// AboutPage.getLayout = function getLayout(page) {
+//   return <GeneralLayout>{page}</GeneralLayout>;
+// };
+
 AboutPage.getLayout = function getLayout(page) {
-  return <GeneralLayout>{page}</GeneralLayout>;
+  return <Layout>{page}</Layout>;
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

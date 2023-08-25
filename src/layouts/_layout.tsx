@@ -6,6 +6,9 @@ import Header from '@/layouts/_header';
 import { Sidebar } from '@/layouts/_layout-sidebar';
 import { useBreakpoint } from '@/lib/hooks/use-breakpoint';
 import { useIsMounted } from '@/lib/hooks/use-is-mounted';
+import { Footer } from './_footer';
+import { Footer2 } from './_footer2';
+
 const BottomNavigation = dynamic(() => import('@/layouts/_bottom-navigation'), {
   ssr: false,
 });
@@ -31,6 +34,7 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
       />
       <div className="flex flex-1">
         <Sidebar isCollapse={collapse} />
+        
         <main
           className={cn(
             'flex w-full flex-col',
@@ -40,6 +44,8 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
           )}
         >
           {children}
+          <Footer isCollapse={collapse} />
+          <Footer2 isCollapse={collapse} />
         </main>
       </div>
       {isMounted && breakpoint === 'xs' && <BottomNavigation />}

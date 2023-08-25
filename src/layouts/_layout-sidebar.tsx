@@ -17,6 +17,8 @@ import { UserFollowingIcon } from '@/components/icons/user-following-icon';
 import { useMe } from '@/data/user';
 import { FeedIcon } from '@/components/icons/feed-icon';
 import { useTranslation } from 'next-i18next';
+import { BookOutlined } from '@material-ui/icons';
+import { InformationIcon } from '@/components/icons/information-icon';
 
 interface NavLinkProps {
   href: string;
@@ -78,6 +80,13 @@ export function Sidebar({
               isCollapse={isCollapse}
               icon={<HomeIcon className="h-[18px] w-[18px] text-current" />}
             />
+
+<NavLink
+              title={t('text-about')}
+              href={routes.about}
+              isCollapse={isCollapse}
+              icon={<InformationIcon className="h-[18px] w-[18px] text-current" />}
+            />
             {/* <NavLink
               title={t('text-explore')}
               href={routes.explore}
@@ -114,7 +123,7 @@ export function Sidebar({
             />
           </nav>
 
-          <nav className="mt-auto flex flex-col pb-4">
+          {/* <nav className="mt-auto flex flex-col pb-4">
             <NavLink
               title={t('text-settings')}
               href={routes.profile}
@@ -127,11 +136,11 @@ export function Sidebar({
               isCollapse={isCollapse}
               icon={<HelpIcon className="h-[18px] w-[18px] text-current" />}
             />
-          </nav>
+          </nav> */}
         </div>
       </Scrollbar>
 
-      <footer
+      {/* <footer
         className={cn(
           'flex-col border-t border-light-400 pt-3 pb-4 text-center dark:border-dark-400',
           isCollapse ? 'flex xl:hidden' : 'hidden xl:flex'
@@ -158,7 +167,7 @@ export function Sidebar({
           </ActiveLink>
         </nav>
         <Copyright className="text-xs font-medium text-dark-800/80 dark:text-dark-700" />
-      </footer>
+      </footer> */}
     </aside>
   );
 }

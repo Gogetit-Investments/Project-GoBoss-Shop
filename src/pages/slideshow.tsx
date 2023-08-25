@@ -483,7 +483,8 @@ const CenteredSlider = styled.div`
 
 const ImagePlaceholder = styled.img`
   width: 470px;
-
+  height: 384;
+  max-height: 384%;
   background-color: #f1f1f1; /* Placeholder background color */
   margin-left: -10px; /* Adjust the margin as needed */
   margin-right: 10px;

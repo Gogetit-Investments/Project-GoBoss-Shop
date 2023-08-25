@@ -29,4 +29,44 @@ export const helpData = [
     title: 'text-help-six-title',
     content: 'text-help-six-desc',
   },
+  {
+    id: '7',
+    title: 'text-help-seven-title',
+    content: 'text-help-sevenn-desc',
+  },
+  {
+    id: '8',
+    title: 'text-help-eight-title',
+    content: 'text-help-eight-desc',
+  },
+
+  {
+    id: '9',
+    title: 'text-help-nine-title',
+    content: 'text-help-nine-desc',
+  },
+
+  {
+    id: '10',
+    title: 'text-help-ten-title',
+    content: 'text-help-ten-desc',
+  },
+
+  {
+    id: '11',
+    title: 'text-help-eleven-title',
+    content: 'text-help-eleven-desc',
+  },
+
+  {
+    id: '12',
+    title: 'text-help-twelve-title',
+    content: 'text-help-twelve-desc',
+  },
+
+  {
+    id: '13',
+    title: 'text-help-thirteen-title',
+    content: 'text-help-thirteen-desc',
+  },
 ];
