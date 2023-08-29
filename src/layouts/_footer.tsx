@@ -74,21 +74,21 @@ export function Footer({
   <h2> PHONE SUPPORT</h2>
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <FontAwesomeIcon icon={faPhone}  style={{width: "20px"}}/>
-    <p style={{ marginLeft: '10px' }}>+234 803 850 6974</p>
+    <p style={{ marginLeft: '10px' }}><a href='tel:08038506974'>+234 803 850 6974</a></p>
   </div>
 </div>
 <div style={styles.column}>
   <h2> WHATSAPP</h2>
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <FontAwesomeIcon icon={faWhatsapp}  style={{width: "20px"}}/>
-    <p style={{ marginLeft: '10px' }}>+234 803 850 6974</p>
+    <p style={{ marginLeft: '10px' }}><a href='https://wa.me/08038506974' target='_blank'>+234 803 850 6974</a></p>
   </div>
 </div>
 <div>
 <h2> EMAIL</h2>
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <FontAwesomeIcon icon={faEnvelope}  style={{width: "20px"}}/>
-    <p style={{ marginLeft: '10px' }}>help@goboss.com.ng</p>
+    <p style={{ marginLeft: '10px' }}><a href='mailto:help@goboss.com.ng'>help@goboss.com.ng</a></p>
   </div>
 </div>
   </div>
