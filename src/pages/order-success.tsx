@@ -83,10 +83,14 @@ const ContactUsPage: NextPageWithLayout = () => {
         url={routes.contact}
       />
       <div className="mx-auto flex h-full w-full max-w-screen-xl flex-col p-4 sm:p-5">
-        <PageHeading
-          title={t('Order Successful!')}
-          subtitle= "Your order was successfuly placed. Please check your email for details."
-        />
+      <PageHeading
+  title={t('Order Successful!')}
+  subtitle={
+    'Your order was successfully placed. Please check your email for details. ' +
+    'Click <a href="/">here</a> to continue shopping.'
+  }
+/>
+
         {/* <p >
               Your order was successfuly placed. Please check your email for details.
             </p> */}
