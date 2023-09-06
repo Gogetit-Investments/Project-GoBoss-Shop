@@ -26,6 +26,8 @@ import Link from '@/components/ui/link';
 import routes from '@/config/routes';
 import AnchorLink from '@/components/ui/links/anchor-link';
 import { CreditCardIcon } from '@/components/icons/credit-card-icon';
+import React, { useState, useEffect } from 'react';
+
 
 function OrderedItem({ item }: { item: OrderedFile }) {
   const { t } = useTranslation('common');
@@ -208,6 +210,39 @@ const Purchases: NextPageWithLayout = () => {
 
   // console.log(downloadableFiles, 'downloadableFiles');
 
+// Define an interface to describe the shape of an order
+interface Order {
+  id: number;
+  tracking_number: string;
+  customer_name: string;
+  amount: number;
+  order_status: string;
+  payment_status: string;
+  created_at: string;
+  // ... other properties
+}
+
+  // const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState<Order[]>([]);
+
+  useEffect(() => {
+    // Fetch data from the endpoint
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/api/myorders');
+        const data = await response.json();
+        setOrders(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
+
+
   return (
     <motion.div
       variants={fadeInBottom()}
@@ -220,7 +255,7 @@ const Purchases: NextPageWithLayout = () => {
         </span>
       </h1>
 
-      {isLoading &&
+      {/* {isLoading &&
         !downloadableFiles.length &&
         rangeMap(LIMIT, (i) => <OrderItemLoader key={`order-loader-${i}`} />)}
 
@@ -233,7 +268,40 @@ const Purchases: NextPageWithLayout = () => {
         downloadableFiles.map((file) => (
           <OrderedItem key={file.id} item={file} />
         ))
-      )}
+      )} */}
+
+
+
+<div>
+      <h1>Order List</h1>
+      <table>
+        <thead>
+          <tr>
+            {/* <th>ID</th> */}
+            <th>Tracking Number</th>
+            <th>Customer Name</th>
+            <th>Amount</th>
+            <th>Order Status</th>
+            <th>Payment Status</th>
+            <th>Created At</th>
+          </tr>
+        </thead>
+        <tbody>
+          {orders.map(order => (
+            <tr key={order.id}>
+              {/* <td>{order.id}</td> */}
+              <td>{order.tracking_number}</td>
+              <td>{order.customer_name}</td>
+              <td>{order.amount}</td>
+              <td>{order.order_status}</td>
+              <td>{order.payment_status}</td>
+              <td>{order.created_at}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
 
       {hasNextPage && (
         <div className="mt-10 grid place-content-center">

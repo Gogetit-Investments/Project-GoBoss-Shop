@@ -13,7 +13,7 @@ export const API_ENDPOINTS = {
   TOP_SHOPS: '/top-shops',
   ORDERS: '/orders',
   ORDERS_CHECKOUT_VERIFY: 'orders/checkout/verify',
-  ORDERS_DOWNLOADS: '/downloads',
+  ORDERS_DOWNLOADS: '/api/myorders',
   GENERATE_DOWNLOADABLE_PRODUCT_LINK: '/downloads/digital-file',
   USERS: '/users',
   USERS_ME: '/me',

@@ -370,11 +370,11 @@ const DemoCarousel: React.FC = () => {
         </MenuWrapper>
         <CarouselContainer>
           <Carousel showThumbs={false} autoPlay={true}>
-            <div>
+            {/* <div>
               <img src="https://ng.jumia.is/cms/0-1-cpr/2023/large-item-updated/design-update/Desktop_Homepage_Slider__712x384.png" alt="Carousel Image 1" />
-            </div>
+            </div> */}
             <div>
-              <img src="https://ng.jumia.is/cms/0-6-anniversary/2023/initiatives/712x384.gif" alt="Carousel Image 2" />
+              <img src="/image/Goboss_Gif.gif" alt="Carousel Image 2" />
             </div>
           </Carousel>
         </CarouselContainer>
