@@ -86,7 +86,7 @@ export default function Card({ product }: { product: Product }) {
           </button> */}
         </div>
       </div>
-      <div className="flex items-start justify-between pt-3.5">
+      <div >
         {/* <div className="relative flex h-8 w-8 flex-shrink-0 4xl:h-9 4xl:w-9">
           <Image
             alt={shop?.name}
@@ -108,19 +108,17 @@ export default function Card({ product }: { product: Product }) {
             href={routes.shopUrl(shop?.slug)}
             className="font-medium text-light-base hover:text-brand dark:text-dark-800 dark:hover:text-brand"
           >
-            {shop?.name} - {shop?.address?.city}
+            {shop?.name} - {shop?.address?.city}<br/>
           </AnchorLink>
-        </div>
-
-        <div className="flex flex-shrink-0 flex-col items-end pl-2.5">
-          <span className="rounded-2xl bg-light-500 px-1.5 py-0.5 text-13px font-semibold uppercase text-brand dark:bg-dark-300 dark:text-brand-dark">
-            {isFreeItem ? t('text-free') : price}
+     
+          <span className="rounded-2xl bg-light-500 px-1.5 py-0.5 text-11px font-semibold uppercase text-brand dark:bg-dark-300 dark:text-brand-dark">
+            { price}
           </span>
-          {!isFreeItem && basePrice && (
-            <del className="px-1 text-13px font-medium text-dark-900 dark:text-dark-700">
+         
+            <del className="px-1 text-11px font-medium text-dark-900 dark:text-dark-700">
               {basePrice}
             </del>
-          )}
+          
         </div>
       </div>
     </motion.div>
